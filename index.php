@@ -17,7 +17,7 @@
             <button class="navShowHide">Click Me!</button>
         </div>
         
-        <div id="sideNavContainer">
+        <div id="sideNavContainer" style = "display:none;">
         
         </div>
 
