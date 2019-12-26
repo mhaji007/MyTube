@@ -21,6 +21,16 @@
             <a class="LogoContainer" href="index.php">
                 <img src = "assets/images/icons/MyTube.png" title="logo" alt=" site logo">
             </a>
+
+            <div class="searchBarContainer">
+                <form action="search.php" method="GET">
+                    <input type="text" class="searchBar" name="term" placeholer="Search...">
+                    <button class="searchButton">
+                        <img src="assets/images/icons/search.png" alt="search button">
+                    </button>
+
+                </form>
+            </div>
         </div>
         
         <div id="sideNavContainer" style = "display:none;">
