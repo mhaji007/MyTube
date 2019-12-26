@@ -17,7 +17,11 @@
         
         </div>
 
-        <div 9d="mainSectionContainer">
+        <div id="mainSectionContainer">
+
+            <div id="mainContentContainer">
+                Hello Everyone
+            </div>
         
         </div>
 
