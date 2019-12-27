@@ -1,19 +1,13 @@
 <?php
+ob_start(); //Turns on output buffering 
 
-ob_start(); // turns on output buffering
-
-
-date_default_timezone_set("America/Los_Angeles");
-
+date_default_timezone_set("Europe/London");
 
 try {
-    $con = new PDO("msql:dbname=MyTube;host=localhost","root","");
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);  // outputs a warning in addition to setting the error code
+    $con = new PDO("mysql:dbname=MyTube;host=localhost", "root", "");
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 }
-
-catch (PDOException $e){
-    echo "Connection failed: " . $e->getMessage(); 
-
+catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
 }
-
 ?>
