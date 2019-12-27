@@ -6,11 +6,13 @@ class VideoDetailsFormProvider {
         $fileInput = $this->createFileInput();
         $titleInput = $this->createTitleInput();
         $descriptionInput = $this->createDescriptionInput();
+        $privacyInput = $this->createPrivacyInput();
 
         return "<form action='processing.php' method='POST'>
                     $fileInput
                     $titleInput
                     $descriptionInput
+                    $privacyInput
                 </form>";
 
     }
@@ -18,14 +20,14 @@ class VideoDetailsFormProvider {
     private function createFileInput() {
 
         return "<div class='form-group'>
-                <input type='file' class='form-control-file' id='exampleFormControlFile1' name='fileInput' required>
+                    <input type='file' class='form-control-file' id='exampleFormControlFile1' name='fileInput' required>
                 </div>";
     }
 
     private function createTitleInput() {
 
         return "<div class='form-group'>
-                <input class='form-control' type='text' placeholder='Title' name ='titleInput'>
+                    <input class='form-control' type='text' placeholder='Title' name ='titleInput'>
                 </div>";
 
     }
@@ -33,7 +35,18 @@ class VideoDetailsFormProvider {
     private function createDescriptionInput() {
 
         return "<div class='form-group'>
-                <textarea class='form-control' placeholder='descriptionInput' rows='3' name ='descriptionInput'></textarea>
+                    <textarea class='form-control' placeholder='Description' rows='3' name ='descriptionInput'></textarea>
+                </div>";
+
+    }
+
+    private function createPrivacyInput() {
+
+        return "<div class='form-group'>
+                    <select class='form-control' name='privacyInput'>
+                        <option value = '0'>Private</option>
+                        <option value = '1'>Public</option>
+                     </select>
                 </div>";
 
     }
