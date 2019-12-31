@@ -22,7 +22,6 @@ class VideoProcessor {
 
         $isValidData = $this->processData($videoData, $tempFilePath);
 
-        echo $tempFilePath;
     }
 
     private function processData($videoData, $filePath) {
@@ -36,6 +35,10 @@ class VideoProcessor {
         else if (!$this->isValidType($videoType)) {
             echo "Invalid file type";
             return false;
+        }
+
+        else if ($this->hasError($videoData)) {
+
         }
     }
 
