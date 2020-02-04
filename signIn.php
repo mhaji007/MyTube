@@ -26,7 +26,7 @@
 
             <div class="loginForm">
 
-            <form action="singUp.php">
+            <form action="singIn.php">
 
             <input type="text" name="username" placeholder="Username" required autocomplete="off">
             <input type="password" name="password" placeholder="Password" required>
