@@ -40,6 +40,27 @@ class Account {
 
     }
 
+    private function validateEmails($em, $em2) {
+        if($em != $em2) {
+            array_push($this->errorArray, Constants::$emailsDoNotMatch);
+            return;
+        }
+
+        if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            array_push($this->errorArray, Constants::$emailInvalid);
+            return;
+        }
+
+        $query = $this->con->prepare("SELECT email FROM users WHERE email=:em");
+        $query->bindParam(":em", $em);
+        $query->execute();
+
+        if($query->rowCount() != 0) {
+            array_push($this->errorArray, Constants::$emailTaken);
+        }
+
+    }
+
     public function getError($error) {
         if(in_array($error, $this->errorArray)) {
             return "<span class='errorMessage'>$error</span>";
