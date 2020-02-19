@@ -14,8 +14,20 @@ class Account {
         $this->validateUsername($un);
         $this->validateEmails($em, $em2);
         $this->validatePasswords($pw, $pw2);
+
+        if(empty($this->errorArray)) {
+            return $this->insertUserDetails($fn, $ln, $un, $em, $pw);
+        }
+        else {
+            return false;
+        }
+        
     }
     
+    public function insertUserDetails($fn, $ln, $un, $em, $pw) {
+        return true;
+    }
+
     private function validateFirstName($fn) {
         if(strlen($fn) > 25 || strlen($fn) < 2) {
             array_push($this->errorArray, Constants::$firstNameCharacters);
